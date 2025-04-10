@@ -21,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -69,7 +68,7 @@ fun LoginScreen(navController: NavController) {
             Text(text = "Password")
         }, visualTransformation = PasswordVisualTransformation())
 
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(26.dp))
 
         Button(onClick = {
             Log.i("Crendentials", "Email: $email, Password: $password")
@@ -84,15 +83,15 @@ fun LoginScreen(navController: NavController) {
             Text(text = "Login")
 
         }
+        Spacer(modifier = Modifier.height(25.dp))
+
+        TextButton(onClick = { }) {
+            Text(text = "Forgot Password ?", modifier = Modifier.clickable {
+
+            })
+        }
     }
 
-    Spacer(modifier = Modifier.height(32.dp))
-
-    TextButton(onClick = { }) {
-        Text(text = "Forgot Password ?", modifier = Modifier.clickable {
-
-        })
-    }
 
 }
 
