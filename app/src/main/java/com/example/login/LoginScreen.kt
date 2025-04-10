@@ -1,6 +1,7 @@
 package com.example.login
 
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -23,10 +24,11 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview(showBackground = true)
+
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
 
     var email by remember {
         mutableStateOf("")
@@ -69,21 +71,31 @@ fun LoginScreen() {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = { }) {
+        Button(onClick = {
             Log.i("Crendentials", "Email: $email, Password: $password")
+            if (email == "admin" && password == "password") {
+                navController.navigate("home")
+            } else {
+                Toast.makeText(navController.context, "Invalid credentials", Toast.LENGTH_SHORT)
+                    .show()
+            }
+
+        }) {
             Text(text = "Login")
+
         }
+    }
 
-        Spacer(modifier = Modifier.height(32.dp))
+    Spacer(modifier = Modifier.height(32.dp))
 
-        TextButton(onClick = { }) {
-            Text(text = "Forgot Password ?", modifier = Modifier.clickable {
+    TextButton(onClick = { }) {
+        Text(text = "Forgot Password ?", modifier = Modifier.clickable {
 
-            })
-        }
-
+        })
     }
 
 }
+
+
 
 
