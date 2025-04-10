@@ -38,6 +38,10 @@ fun LoginScreen() {
 
 
         Text(text = "Welcome Back!", fontSize = 28.sp, fontWeight = FontWeight.Bold)
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Text(text = "Login to your account", fontSize = 14.sp)
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(value = "", onValueChange = {}, label = {
             Text(text = "Email address")
@@ -50,6 +54,12 @@ fun LoginScreen() {
         })
 
         Spacer(modifier = Modifier.height(16.dp))
+
+        Button(onClick = { }) {
+            Text(text = "Login")
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(text = "Forgot Password?", fontSize = 14.sp)
     }
 
 }
