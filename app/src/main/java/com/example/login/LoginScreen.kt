@@ -10,8 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 @Preview(showBackground = true)
 @Composable
@@ -27,7 +29,7 @@ fun LoginScreen() {
             modifier = Modifier.size(200.dp)
         )
 
-        Text(text = "Welcome Back!")
+        Text(text = "Welcome Back!", fontSize = 28.sp, fontWeight = FontWeight.Bold)
     }
 
 }
